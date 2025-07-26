@@ -1,0 +1,9 @@
+stages:
+  - test
+
+test_job:
+  stage: test
+  image: python:3.11
+  script:
+    - pip install -r requirements.txt
+    - pytest tests/ --maxfail=1 --disable-warnings -q
